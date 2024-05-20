@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -32,7 +33,10 @@ class ProjectController extends Controller
     {
         //validate
         $validatedRequest = $request->validated();
+        $slug = Str::slug($request->title,'-');
+        //dd($slug);
         //create
+        $validatedRequest['slug'] = $slug;
         Project::create($validatedRequest);
         //redirect
         return to_route('admin.projects.index');
