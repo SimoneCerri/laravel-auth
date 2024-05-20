@@ -11,7 +11,6 @@
             <a class="btn btn-secondary" href="{{ route('admin.projects.create') }}">Add project</a>
         </div>
     </header>
-
     <section class="py-5">
         <div class="container">
             <h4>

@@ -51,7 +51,6 @@
             <button type="submit" class="btn btn-primary">
                 Create the project
             </button>
-
         </form>
     </div>
 @endsection
