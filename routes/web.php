@@ -28,7 +28,8 @@ Route::middleware(['auth','verified'])
         //all route here that needs to be protected by our auth system
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-        Route::resource('projects',ProjectController::class);
+        Route::resource('projects',ProjectController::class)->parameters(['projects'=>'project:slug']);
+        //ADD slugs instead of ID in URL with ->parameters(['names'=>'name:slug'])
     });
 
 Route::middleware('auth')->group(function () {
