@@ -59,7 +59,8 @@
                 </tbody>
             </table>
         </div>
-
+        {{$projects->links('pagination::bootstrap-5')}}
+        {{-- php artisan vendor:publish --}}
     </div>
 </section>
 @endsection
