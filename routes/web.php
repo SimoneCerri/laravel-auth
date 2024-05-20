@@ -25,7 +25,7 @@ Route::middleware(['auth','verified'])
     ->group(function()
     {
         //all route here that needs to be protected by our auth system
-        Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     });
 
 Route::middleware('auth')->group(function () {
