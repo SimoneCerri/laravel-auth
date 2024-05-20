@@ -2,12 +2,13 @@
 
 @section('content')
 <header>
-    <div class="container bg-dark py-3 text-danger">
+    <div class="container bg-dark py-3 text-danger d-flex align-items-center justify-content-between">
         <h1>
             <strong>
                 Projects
             </strong>
         </h1>
+        <a class="btn btn-secondary" href="{{route('admin.projects.create')}}">Add project</a>
     </div>
 </header>
 
@@ -36,7 +37,17 @@
                             </td>
                             <td scope="row">{{$project->title}}</td>
                             <td scope="row">{{$project->slug}}</td>
-                            <td scope="row">View/Edit/Delete</td>
+                            <td scope="row">
+                                <a class="btn btn-dark" href="{{route('admin.projects.show',$project)}}">
+                                    <i class="fas fa-eye fa-xs fa-fw"></i>
+                                </a>
+                                <a href="">
+
+                                </a>
+                                <a href="">
+
+                                </a>
+                            </td>
                             
                         </tr>
                     @empty
