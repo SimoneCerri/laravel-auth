@@ -24,6 +24,24 @@
                 @enderror
             </div>
             <div class="mb-3">
+                <label for="url1" class="form-label">GitHub link</label>
+                <input type="text" class="form-control @error('url1') is-invalid @enderror" name="url1" id="url1"
+                    aria-describedby="url1HelpId" placeholder="New Project" value="{{old('url1')}}"/>
+                <small id="url1HelpId" class="form-text text-muted">Insert a link</small>
+                @error('url1')
+                    <div class="text-danger py-2">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <label for="url2" class="form-label">Preview link</label>
+                <input type="text" class="form-control @error('url2') is-invalid @enderror" name="url2" id="url2"
+                    aria-describedby="url2HelpId" placeholder="New Project" value="{{old('url2')}}"/>
+                <small id="url2HelpId" class="form-text text-muted">Insert a link</small>
+                @error('url2')
+                    <div class="text-danger py-2">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="mb-3">
                 <label for="img" class="form-label">Image</label>
                 <input type="text" class="form-control @error('img') is-invalid @enderror" name="img" id="img"
                     aria-describedby="imgHelpId" placeholder="New image for project" value="{{old('img')}}" />
