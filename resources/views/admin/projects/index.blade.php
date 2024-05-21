@@ -13,6 +13,12 @@
     </header>
     <section class="py-5">
         <div class="container">
+            @if (session('status'))
+                <div class="alert alert-success d-flex align-items-center justify-content-between">
+                    {{ session('status') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <h4>
                 List of the projects:
             </h4>
@@ -57,7 +63,8 @@
                                                     <h5 class="modal-title" id="modalTitleId">
                                                         Are you sure to delete {{ $project->title }} project ?
                                                     </h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="container-fluid">❌care❌care❌</div>

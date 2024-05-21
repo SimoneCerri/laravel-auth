@@ -63,8 +63,12 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        $project->update($request->all());
-        return view('admin.projects.index',compact('project'));
+        $validatedProject = $request->validated();
+        $slug = Str::slug($request->title, '-');
+        $validatedRequest['slug'] = $slug;
+        $project->update($validatedProject);
+        $title = $project['title'];
+        return to_route('admin.projects.index')->with('status',"Project $title updated with success !");
     }
 
     /**
@@ -72,7 +76,8 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        $title = $project['title'];
         $project->delete();
-        return to_route('admin.projects.index');
+        return to_route('admin.projects.index')->with('status',"Deleted $title project with success..");
     }
 }
