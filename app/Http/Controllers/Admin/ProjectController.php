@@ -37,9 +37,10 @@ class ProjectController extends Controller
         //dd($slug);
         //create
         $validatedRequest['slug'] = $slug;
+        $title = $validatedRequest['title'];
         Project::create($validatedRequest);
         //redirect
-        return to_route('admin.projects.index');
+        return to_route('admin.projects.index')->with('status',"Add successfully project $title");
     }
 
     /**
