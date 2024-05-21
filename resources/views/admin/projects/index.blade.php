@@ -24,7 +24,8 @@
                             <th scope="col">ID</th>
                             <th scope="col">IMAGE</th>
                             <th scope="col">TITLE</th>
-                            <th scope="col">SLUG</th>
+                            <th scope="col">GITHUB</th>
+                            <th scope="col">PREVIEW</th>
                             <th scope="col">ACTIONS</th>
                         </tr>
                     </thead>
@@ -36,18 +37,19 @@
                                     <img src="{{ $project->img }}" alt="">
                                 </td>
                                 <td scope="row">{{ $project->title }}</td>
-                                <td scope="row">{{ $project->slug }}</td>
+                                <td scope="row">{{ $project->url1 }}</td>
+                                <td scope="row">{{ $project->url2 }}</td>
                                 <td scope="row">
                                     <a class="btn btn-dark" href="{{ route('admin.projects.show', $project) }}">
-                                        <i class="fas fa-eye fa-xs fa-fw"></i>
+                                        <i class="fas fa-eye fa-2xs fa-fw"></i>
                                     </a>
                                     <a class="btn btn-dark" href="{{ route('admin.projects.edit', $project) }}">
-                                        <i class="fas fa-pencil fa-xs fa-fw"></i>
+                                        <i class="fas fa-pencil fa-2xs fa-fw"></i>
                                     </a>
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                         data-bs-target="#modalId-{{ $project->id }}">
-                                        <i class="fas fa-trash-can fa-xs fa-fw"></i>
+                                        <i class="fas fa-trash-can fa-2xs fa-fw"></i>
                                     </button>
                                     <!-- Modal -->
                                     <div class="modal fade" id="modalId-{{ $project->id }}" tabindex="-1" role="dialog"
@@ -81,7 +83,7 @@
                             </tr>
                         @empty
                             <tr class="">
-                                <td scope="row" colspan="4">No projects to show</td>
+                                <td scope="row" colspan="6">No projects to show</td>
                             </tr>
                         @endforelse
                     </tbody>
