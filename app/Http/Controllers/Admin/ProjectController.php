@@ -75,9 +75,9 @@ class ProjectController extends Controller
         $validatedRequest['slug'] = $slug;
         if ($request->has('img')) //check if request have the 'img' inside
         {
-            if($project->img)
+            if($project->img) //check if exist one img before inside it
             {
-                Storage::delete($project->img);
+                Storage::delete($project->img); //delete old img inside storage
             }
             $img_path = Storage::put('uploads', $validatedRequest['img']); //take the path
             $validatedRequest['img'] = $img_path; //save the path inside validated data
@@ -93,6 +93,10 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $title = $project['title'];
+        if ($project->img)
+        {
+            Storage::delete($project->img); //delete old img inside storage
+        }
         $project->delete();
         return to_route('admin.projects.index')->with('status',"Deleted $title project with success..");
     }

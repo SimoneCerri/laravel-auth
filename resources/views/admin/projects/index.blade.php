@@ -14,6 +14,7 @@
     <section class="py-5">
         <div class="container">
             @include('partials.session-message')
+            {{-- @dd(session('status')) --}}
             <h4>
                 List of the projects:
             </h4>
