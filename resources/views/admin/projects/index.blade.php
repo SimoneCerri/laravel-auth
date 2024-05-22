@@ -9,7 +9,12 @@
                         Projects
                     </strong>
                 </h1>
-                <a class="btn btn-danger text-dark" href="{{ route('admin.projects.create') }}">Add project</a>
+                <a class="btn btn-danger text-dark" href="{{ route('admin.projects.create') }}">
+                    <i class="fa-solid fa-plus fa-lg fa-fw"></i>
+                    <span class="fw-bold px-1">
+                        ADD PROJECT
+                    </span>
+                </a>
             </div>
         </div>
     </header>
@@ -48,22 +53,22 @@
                                         <img width="250" src="{{ asset('storage/' . $project->img) }}" alt="">
                                     @endif
                                 </td>
-                                <td scope="row" class="text-center"><
+                                <td scope="row" class="text-center">
                                     <div class="py-1">
                                         <a class="btn btn-dark" href="{{ route('admin.projects.show', $project) }}">
-                                            <i class="fas fa-eye fa-2xs fa-fw"></i>
+                                            <i class="fas fa-eye fa-sm fa-fw"></i>
                                         </a>
                                     </div>
                                     <div class="py-1">
                                         <a class="btn btn-dark" href="{{ route('admin.projects.edit', $project) }}">
-                                            <i class="fas fa-pencil fa-2xs fa-fw"></i>
+                                            <i class="fas fa-pencil fa-sm fa-fw"></i>
                                         </a>
                                     </div>
                                     <div class="py-1">
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-danger" data-bs-toggle="modal"
                                             data-bs-target="#modalId-{{ $project->id }}">
-                                            <i class="fas fa-trash-can fa-2xs fa-fw"></i>
+                                            <i class="fas fa-trash-can fa-sm fa-fw"></i>
                                         </button>
                                         <!-- Modal -->
                                         <div class="modal fade" id="modalId-{{ $project->id }}" tabindex="-1"
