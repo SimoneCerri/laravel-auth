@@ -20,9 +20,9 @@
                 </div>
                 <div class="col-4">
                     @if (Str::startsWith($project->img, 'https://'))
-                        <img src="{{ $project->img }}" alt="">
+                        <img width="250" src="{{ $project->img }}" alt="">
                     @else
-                        <img src="{{ asset('storage/' . $project->img) }}" alt="">
+                        <img width="250" src="{{ asset('storage/' . $project->img) }}" alt="">
                     @endif
                 </div>
                 <div class="col-3">

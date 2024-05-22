@@ -12,7 +12,7 @@
     </header>
     <div class="container py-5">
         @include('partials.validation-messagge')
-        <form action="{{ route('admin.projects.store') }}" method="post enctype="multipart/form-data"">
+        <form action="{{ route('admin.projects.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
