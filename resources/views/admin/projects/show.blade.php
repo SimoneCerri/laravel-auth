@@ -15,11 +15,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-2">
-                        <span class="fw-bold">Project ID:</span> <br>
-                        <span scope="row">{{ $project->id }}</span>
+                    <span class="fw-bold">Project ID:</span> <br>
+                    <span scope="row">{{ $project->id }}</span>
                 </div>
                 <div class="col-4">
-                    <img src="{{ $project->img }}" alt="">
+                    @if (Str::startsWith($project->img, 'https://'))
+                        <img src="{{ $project->img }}" alt="">
+                    @else
+                        <img src="{{ asset('storage/' . $project->img) }}" alt="">
+                    @endif
                 </div>
                 <div class="col-3">
                     <span class="fw-bold">GitHub:</span> <br>

@@ -44,7 +44,7 @@
             <div class="mb-3">
                 <label for="img" class="form-label">Image</label>
                 <input type="file" class="form-control @error('img') is-invalid @enderror" name="img" id="img"
-                    aria-describedby="imgHelpId" placeholder="New image for project" value="{{old('img')}}" />
+                    aria-describedby="imgHelpId" placeholder="New image for project" value="" />
                 <small id="imgHelpId" class="form-text text-muted">Insert an image</small>
                 @error('img')
                     <div class="text-danger py-2">{{ $message }}</div>

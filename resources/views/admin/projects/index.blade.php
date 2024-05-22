@@ -35,7 +35,11 @@
                             <tr class="">
                                 <td scope="row">{{ $project->id }}</td>
                                 <td scope="row">
-                                    <img src="{{ $project->img }}" alt="">
+                                    @if (Str::startsWith($project->img,'https://'))
+                                    <img src="{{ $project->img }}" alt="">                                       
+                                    @else
+                                        <img src="{{asset('storage/'.$project->img)}}" alt="">
+                                    @endif
                                 </td>
                                 <td scope="row">{{ $project->title }}</td>
                                 <td scope="row">{{ $project->url1 }}</td>
