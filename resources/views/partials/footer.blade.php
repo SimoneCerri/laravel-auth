@@ -28,7 +28,7 @@
                     <hr>
                 </div>
             </div>
-            <div class="row justify-content-center text-center py-5">
+            <div class="row justify-content-center text-center mt-3">
                 <div class="col">
                     <img src="" alt="">
                     <span>

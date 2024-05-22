@@ -20,15 +20,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth','verified'])
+Route::middleware(['auth', 'verified'])
     ->name('admin.')
     ->prefix('admin')
-    ->group(function()
-    {
+    ->group(function () {
         //all route here that needs to be protected by our auth system
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-        Route::resource('projects',ProjectController::class)->parameters(['projects'=>'project:slug']);
+        Route::get('home', [DashboardController::class, 'home'])->name('home');
+
+        Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
         //ADD slugs instead of ID in URL with ->parameters(['names'=>'name:slug'])
     });
 
@@ -38,4 +39,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
