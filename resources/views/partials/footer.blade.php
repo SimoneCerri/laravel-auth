@@ -5,8 +5,8 @@
                 <div class="col-4">
                     <hr>
                 </div>
-                <div class="col-4 align-self-center">
-                    <ul class="list-unstyled d-flex text-dark align-items-center">
+                <div class="col-4">
+                    <ul class="list-unstyled d-flex justify-content-evenly">
                         <li>
                             <a href="">
                                 <i class="fa-brands fa-xl fa-fw fa-square-facebook" style="color: #000000;"></i>
@@ -28,23 +28,54 @@
                     <hr>
                 </div>
             </div>
+            <div class="row justify-content-center text-center py-5">
+                <div class="col">
+                    <img src="" alt="">
+                    <span>
+                        Copyright &copy; 2024 Simone Cerri.
+                    </span>
+                </div>
+            </div>
         </div>
         <hr>
         <div class="container text-center">
-            <div class="row">
-                <div class="col-6">
-                    <h4>
-                        <strong>
-                            All right reserved. &COPY;
-                        </strong>
-                    </h4>
+            <div class="row justify-content-evenly align-items-center">
+                <div class="col-1 flex-grow-1">
+                    <a class="text-dark text-nowrap" href="">
+                        Legal
+                    </a>
                 </div>
-                <div class="col-6">
-                    <h4>
-                        <strong>
-                            Creating since 2024.
-                        </strong>
-                    </h4>
+                <div class="col-1 flex-shrink-1">
+                    |
+                </div>
+                <div class="col-1 flex-grow-1">
+                    <a class="text-dark text-nowrap" href="">
+                        Privacy Policy
+                    </a>
+                </div>
+                <div class="col-1 flex-shrink-1">
+                    |
+                </div>
+                <div class="col-1 flex-grow-1">
+                    <a class="text-dark text-nowrap" href="">
+                        Security
+                    </a>
+                </div>
+                <div class="col-1 flex-shrink-1">
+                    |
+                </div>
+                <div class="col-1 flex-grow-1">
+                    <a class="text-dark text-nowrap" href="">
+                        Website Accessability
+                    </a>
+                </div>
+                <div class="col-1 flex-shrink-1">
+                    |
+                </div>
+                <div class="col-1 flex-grow-1">
+                    <a class="text-dark text-nowrap" href="">
+                        Manage Cookies
+                    </a>
                 </div>
             </div>
         </div>
