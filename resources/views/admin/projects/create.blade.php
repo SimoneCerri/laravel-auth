@@ -12,7 +12,7 @@
     </header>
     <div class="container py-5">
         @include('partials.validation-messagge')
-        <form action="{{ route('admin.projects.store') }}" method="post">
+        <form action="{{ route('admin.projects.store') }}" method="post enctype="multipart/form-data"">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
@@ -43,7 +43,7 @@
             </div>
             <div class="mb-3">
                 <label for="img" class="form-label">Image</label>
-                <input type="text" class="form-control @error('img') is-invalid @enderror" name="img" id="img"
+                <input type="file" class="form-control @error('img') is-invalid @enderror" name="img" id="img"
                     aria-describedby="imgHelpId" placeholder="New image for project" value="{{old('img')}}" />
                 <small id="imgHelpId" class="form-text text-muted">Insert an image</small>
                 @error('img')

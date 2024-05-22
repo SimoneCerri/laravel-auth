@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -38,6 +39,11 @@ class ProjectController extends Controller
         //create
         $validatedRequest['slug'] = $slug;
         $title = $validatedRequest['title'];
+        if($request->has('img')) //check if request have the 'img' inside
+        {
+            $img_path = Storage::put('uploads',$validatedRequest['img']); //take the path
+            $validatedRequest['img'] = $img_path; //save the path inside validated data
+        }
         Project::create($validatedRequest);
         //redirect
         return to_route('admin.projects.index')->with('status',"Add successfully project $title");
